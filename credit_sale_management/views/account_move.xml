@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_move_kanban" model="ir.ui.view">
+        <field name="name">account.invoice.form.agent</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_move_kanban" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='row mb4']" position="after">
+                <div class="row">
+                    <div class="col-12">
+                        <strong>
+                            <span><field name="name"/></span>
+                        </strong>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- search view -->
+
+
+    <!-- action view -->
+    <record id="action_move_out_invoice_type_cm" model="ir.actions.act_window">
+        <field name="name">Invoices</field>
+        <field name="res_model">account.move</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_id" ref="account.view_out_invoice_tree"/>
+        <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+        <field name="domain">[('move_type', '=', 'out_invoice')]</field>
+        <field name="context">{'default_move_type': 'out_invoice','search_default_past_due_invoices':1}</field>
+    </record>
+
+
+    <record id="view_account_invoice_filter_cm" model="ir.ui.view">
+        <field name="name">account.invoice.select</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='myinvoices']" position="after">
+                <separator/>
+                <filter name="past_due_invoices" string="Past Due Invoices" domain="[('payment_state', 'in', ['partial','not_paid']), ('state', '=', 'posted'),('invoice_date_due','&lt;=',((datetime.datetime.now()).strftime('%Y-%m-%d %H:%M:%S')))]"/>
+            </xpath>
+        </field>
+    </record>
+</odoo> 

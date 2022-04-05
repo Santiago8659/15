@@ -1,0 +1,10 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_admin_payment_report,access.payment.report,model_payment_report,credit_sale_management.admin_payment_receipts,1,1,1,1
+access_admin_payment_error_log,access.payment.error.log,model_payment_error_log,credit_sale_management.admin_payment_receipts,1,1,1,1
+access_admin_payroll_payment,access.payroll.payment,model_payroll_payment,credit_sale_management.admin_payment_receipts,1,1,1,1
+access_admin_saleperson_bank,access.saleperson.bank,model_saleperson_bank,credit_sale_management.admin_payment_receipts,1,1,1,1
+access_user_payment_report,access.payment.report,model_payment_report,credit_sale_management.user_payment_receipts,1,1,1,0
+access_user_payment_error_log,access.payment.error.log,model_payment_error_log,credit_sale_management.user_payment_receipts,1,0,0,0
+access_user_payroll_payment,access.payroll.payment,model_payroll_payment,credit_sale_management.user_payment_receipts,1,1,1,0
+access_user_saleperson_bank,access.saleperson.bank,model_saleperson_bank,credit_sale_management.user_payment_receipts,1,0,0,0
+access_cancel_reason_wizard,access.cancel.reason.wizard,model_cancel_reason_wizard,,1,1,1,1

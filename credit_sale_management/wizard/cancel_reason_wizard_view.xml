@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cancel_reason_wizard_form_view" model="ir.ui.view">
+        <field name="name">Cancel Reason Wizard Form</field>
+        <field name="model">cancel.reason.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="comment" required="1"/>
+                </group>
+                <footer>
+                    <button name="action_cancel_reason_wizard" string="Cancel Payroll Payment" type="object" class="oe_highlight" />
+                    <button string="Cancel" special="cancel" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

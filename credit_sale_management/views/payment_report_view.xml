@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!-- Actions -->
+    <record id="payment_report" model="ir.actions.act_window">
+        <field name="name">Payment Report</field>
+        <field name="res_model">payment.report</field>
+        <field name="view_mode">tree,kanban,form,pivot,graph,activity</field>
+        <field name="help" type="html">
+            <p>
+                Here you can register the payments
+            </p>
+        </field>
+    </record>
+
+    <record id="payroll_payment" model="ir.actions.act_window">
+        <field name="name">Payroll Payment</field>
+        <field name="res_model">payroll.payment</field>
+        <field name="view_mode">tree,kanban,form,pivot,activity</field>
+        <field name="help" type="html">
+            <p>
+                Here you can register the payroll
+            </p>
+        </field>
+    </record>
+
+    <record id="payment_error_log" model="ir.actions.act_window">
+        <field name="name">Payment Error Log</field>
+        <field name="res_model">payment.error.log</field>
+        <field name="view_mode">tree,form</field>
+        <!-- aqui podemos poner el filtro por defecto -->
+        <!-- <field name="context">{'search_default_my_credit_application_filter': 1}</field> -->
+        <field name="help" type="html">
+            <p>
+                Here you can define the kind of error logs
+            </p>
+        </field>
+    </record>
+
+    <record id="saleperson_bank" model="ir.actions.act_window">
+        <field name="name">Saleperson Bank</field>
+        <field name="res_model">saleperson.bank</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Here you can de bank domain for the saleperson
+            </p>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="payment_report_search_view" model="ir.ui.view">
+        <field name="name">payment.report.search.view</field>
+        <field name="model">payment.report</field>
+        <field name="arch" type="xml">
+            <search string="Search Payment Report">
+                <field name="name"/>
+                <field name="invoice_partner_id"/>
+                <field name="invoice_id"/>
+                <field name="user_id"/>
+                <field name="journal_id"/>
+                <filter string="Draft" domain="[('state', '=', 'draft')]" name="state_draft_filter"/>
+                <filter string="To Check" domain="[('state', '=', 'to_check')]" name="state_to_check_filter"/>
+                <separator/>
+                <filter string="Done" domain="[('state', '=', 'done')]" name="state_done_filter"/>
+                <separator/>
+                <filter string="Create Date" name="filter_create_date" date="create_date"/>
+                <group expand="0" string="Group By">
+                    <filter string="Create Date" name="order_month" domain="[]" context="{'group_by': 'create_date'}"/>
+                    <separator/>
+                    <filter string="Company" name="company" domain="[]" context="{'group_by': 'company_id'}"/>
+                    <filter string="Salesperson" name="salesperson" domain="[]" context="{'group_by': 'user_id'}"/>
+                    <filter string="Customer" name="customer" domain="[]" context="{'group_by': 'invoice_partner_id'}"/>
+                    <separator/>
+                    <filter string="State" name="state" domain="[]" context="{'group_by': 'state'}"/>
+                    <filter string="Reconciliation Status" name="state_reconcile" domain="[]" context="{'group_by': 'state_reconcile'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="payroll_payment_search_view" model="ir.ui.view">
+        <field name="name">payroll.payment.search.view</field>
+        <field name="model">payroll.payment</field>
+        <field name="arch" type="xml">
+            <search string="Search Payroll Payment">
+                <field name="name"/>
+                <field name="total_amount"/>
+                <field name="payment_receipt" string="Customer" filter_domain="[('payment_receipt.invoice_partner_id', 'ilike', self)]"/>
+                <field name="payment_receipt" string="Invoice" filter_domain="[('payment_receipt.invoice_id', 'ilike', self)]"/>
+                <field name="journal_id"/>
+                <field name="payment_receipt"/>
+                <field name="user_id" string="Saleperson"/>
+                <filter string="My Payroll Payment" domain="[('user_id', '=', uid)]" name="my_payroll_payment_filter"/>
+                <separator/>
+                <filter string="Draft" domain="[('state', '=', 'draft')]" name="state_draft_filter"/>
+                <filter string="Sent" domain="[('state', '=', 'submit')]" name="state_submit_filter"/>
+                <separator/>
+                <filter string="Done" domain="[('state', '=', 'done')]" name="state_done_filter"/>
+                <separator/>
+                <filter string="Create Date" name="filter_create_date" date="create_date"/>                
+                <group expand="0" string="Group By">
+                    <filter string="Create Date" name="order_month" domain="[]" context="{'group_by': 'create_date'}"/>
+                    <separator/>
+                    <filter string="Company" name="company" domain="[]" context="{'group_by': 'company_id'}"/>
+                    <filter string="Journal" name="journal" domain="[]" context="{'group_by': 'journal_id'}"/>
+                    <filter string="Salesperson" name="salesperson" domain="[]" context="{'group_by': 'user_id'}"/>
+                    <separator/>
+                    <filter string="State" name="state" domain="[]" context="{'group_by': 'state'}"/>
+                    <filter string="Reconciliation Status" name="state_reconcile" domain="[]" context="{'group_by': 'state_reconcile'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+   
+    <!-- Kanban View -->
+    <record id="payment_report_kanban_view" model="ir.ui.view">
+        <field name="name">payment.report.kanban.view</field>
+        <field name="model">payment.report</field>
+        <field name="arch" type="xml">
+            <kanban class="oe_kanban_mobile">
+                <field name="attachment_number" invisible="True"/>
+                <!-- <field name="error_count" invisible="True"/> -->
+                <field name="payment_date"/>
+                <field name="name"/>
+                <field name="create_uid"/>
+                <field name="user_id"/>
+                <field name="invoice_partner_id"/>
+                <field name="invoice_id"/>
+                <field name="activity_ids"/>
+                <field name="create_date" optional="show"/>
+                <field name="amount"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="journal_id"/>
+                <progressbar field="activity_state" colors='{"planned": "success", "today": "warning", "overdue": "danger"}'/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_record_top mb16">
+                                <div class="o_kanban_record_headings mt4">
+                                    <strong><span><t t-esc="record.name.value" class="o_kanban_record_title"/> (<t t-esc="record.invoice_id.value" class="o_kanban_record_title"/>)</span></strong>
+                                </div>
+                                <strong><field name="amount" widget="monetary"/></strong>
+                            </div>
+                            <div class="row">
+                                <div class="col-8 text-muted">
+                                    <span><t t-esc="record.invoice_partner_id.value"/></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-muted">
+                                    <span><t t-esc="record.journal_id.value"/></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-muted">
+                                    <span><t t-esc="record.payment_date.value"/></span>
+                                </div>
+                            </div>
+                            <div class="o_kanban_record_bottom">
+                                <div class="oe_kanban_bottom_left text-muted">
+                                    <field name="state" widget="label_selection" options="{'classes': {'draft': 'default', 'Cancel': 'default', 'done': 'success'}}"/>
+                                    <field name="activity_ids" widget="kanban_activity"/>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <!-- <span t-if="record.error_count.value&gt;0" class="badge badge-pill">
+                                        <i class="fa fa-thumbs-o-down" role="img" aria-label="Error Count" title="Error Count"/><t t-esc="record.error_count.value"/>
+                                    </span> -->
+                                    <span t-if="record.attachment_number.value&gt;0" class="badge badge-pill">
+                                        <i class="fa fa-paperclip" role="img" aria-label="Attachment Number" title="Attachment Number"/><t t-esc="record.attachment_number.value"/>
+                                    </span>
+                                    <button t-if="record.attachment_number.value&lt;1" string="Attach Receipt" class="fa fa-paperclip btn btn-primary btn-sm" name="action_get_attachment_view" type="object" > Attach Receipt</button>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    
+    <record id="payroll_payment_kanban_view" model="ir.ui.view">
+        <field name="name">payroll.payment.kanban.view</field>
+        <field name="model">payroll.payment</field>
+        <field name="arch" type="xml">
+            <kanban class="oe_kanban_mobile">
+                <field name="attachment_number" invisible="True"/>
+                <field name="create_uid" widget="many2one_avatar_user"/>
+                <field name="account_date" optional="show" groups="account.group_account_manager"/>
+                <field name="create_date" optional="show"/>
+                <field name="user_id" widget="many2one_avatar_user" optional="hide"/>
+                <field name="approving_user" widget="many2one_avatar_user" optional="hide"/>
+                <field name="name"/>
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="total_amount" optional="show" widget="monetary" sum="Total Amount" decoration-bf="True"/>
+                <!-- <field name="currency_id" invisible="1"/> -->
+                <button name="action_get_attachment_view" string="Attachments" type="object" icon="fa-paperclip" attrs="{'invisible': [('attachment_number', '=', 0)]}"/>
+                <field name="journal_id"/>
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_record_top mb16">
+                                <div class="o_kanban_record_headings mt4">
+                                    <strong><span><t t-esc="record.name.value" class="o_kanban_record_title"/></span></strong>
+                                </div>
+                                <strong><field name="total_amount" widget="monetary"/></strong>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 text-muted">
+                                    <span>
+                                        <t t-esc="record.journal_id.value"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="o_kanban_record_bottom">
+                                <div class="oe_kanban_bottom_left text-muted">
+                                    <span><t t-esc="record.create_date.value"/></span>
+                                    <field name="activity_ids" widget="kanban_activity"/>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <field name="state" widget="label_selection" options="{'classes': {'draft': 'default', 'Cancel': 'default', 'done': 'success'}}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Tree view-->
+    <record id="payment_report_tree_view" model="ir.ui.view">
+        <field name="name">payment.report.tree.view</field>
+        <field name="model">payment.report</field>
+        <field name="arch" type="xml">
+            <tree string="Payment Report" decoration-muted="state == 'done'" decoration-danger="state == 'cancel'">
+                <field name="attachment_number" invisible="True"/>
+                <field name="name" decoration-bf="True"/>
+                <field name="payment_date" optional="show"/>
+                <field name="create_date" optional="hide"/>
+                <field name="invoice_partner_id" optional="show"/>
+                <field name="invoice_id" optional="show"/>
+                <field name="journal_id" optional="show"/>
+                <field name="user_id" widget="many2one_avatar_user" optional="hide"/>
+                <field name="create_uid" widget="many2one_avatar_user"/>
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <button name="action_get_attachment_view" string="Attachments" type="object" icon="fa-paperclip" attrs="{'invisible': [('attachment_number', '=', 0)]}"/>
+                <field name="amount" optional="show" sum="Total Amount" widget="monetary" decoration-bf="True"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="state" optional="show"
+                       decoration-danger="state in ['rejected', 'cancel']"
+                       decoration-muted="state == 'draft'"
+                       decoration-success="state == 'done'"
+                       widget="badge"
+                />
+            </tree>
+        </field>
+    </record>
+
+    <record id="payroll_payment_tree_view" model="ir.ui.view">
+        <field name="name">payroll.payment.tree.view</field>
+        <field name="model">payroll.payment</field>
+        <field name="arch" type="xml">
+            <tree string="Payroll Payment" decoration-muted="state == 'done'" decoration-danger="state == 'cancel'">
+                <field name="attachment_number" invisible="True"/>
+                <field name="name" decoration-bf="True"/>
+                <field name="create_uid" widget="many2one_avatar_user"/>
+                <field name="create_date" optional="show"/>
+                <field name="account_date" optional="hide" groups="account.group_account_manager"/>
+                <field name="reconciliation_date" optional="hide" groups="account.group_account_manager"/>
+                <field name="user_id" widget="many2one_avatar_user" optional="hide"/>
+                <field name="approving_user" widget="many2one_avatar_user" optional="hide"/>    
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="total_amount" optional="show" widget="monetary" sum="Total Amount" decoration-bf="True"/>
+                <field name="currency_id" invisible="1"/>
+                <button name="action_get_attachment_view" string="Attachments" type="object" icon="fa-paperclip" attrs="{'invisible': [('attachment_number', '=', 0)]}"/>
+                <field name="journal_id" optional="hide"/>
+                <field name="state" optional="show"
+                       decoration-info="state in ['draft', 'submit']"
+                       decoration-success="state in ['approve', 'post', 'done']"
+                       decoration-danger="state == 'cancel'"
+                       widget="badge"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="payment_error_log_tree_view" model="ir.ui.view">
+        <field name="name">payment.error.log.tree.view</field>
+        <field name="model">payment.error.log</field>
+        <field name="arch" type="xml">
+            <tree string="Payment Error Log">
+                <field name="name"/>
+                <field name="severity"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="saleperson_bank_tree_view" model="ir.ui.view">
+        <field name="name">saleperson.bank.tree.view</field>
+        <field name="model">saleperson.bank</field>
+        <field name="arch" type="xml">
+            <tree string="Saleperson Bank">
+                <field name="user_id" widget="many2one_avatar_user"/>
+                <field name="journal_id" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view -->
+    <record id="payment_error_log_form_view" model="ir.ui.view">
+        <field name="name">payment.error.log.form.view</field>
+        <field name="model">payment.error.log</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="Payment Error Log">
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="severity"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="saleperson_bank_form_view" model="ir.ui.view">
+        <field name="name">saleperson.bank.form.view</field>
+        <field name="model">saleperson.bank</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="Saleperson Bank">
+                        <group>
+                            <field name="user_id" options="{'no_create': True, 'no_create_edit':True}"/>
+                        </group>
+                        <group>
+                            <field name="journal_id" widget="many2many_tags" options="{'no_create': True, 'no_create_edit':True}"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="payment_report_form_view" model="ir.ui.view">
+        <field name="name">payment.report.form.view</field>
+        <field name="model">payment.report</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,to_check,done"/>
+                    <!-- <button type="object" name="demo" string="Demo"/> -->
+                    <widget name="attach_document" string="Attach Receipt" action="message_post" 
+                        attrs="{'invisible':[('attachment_number','=',0.0)]}"/>
+                    <widget name="attach_document" string="Attach Receipt" highlight="1" action="message_post" attrs="{'invisible':[('attachment_number','!=',0.0)]}"/>
+                    <button type="object" name="action_confirm" string="Confirm" states="draft" class="oe_highlight" groups="credit_sale_management.admin_payment_receipts"/>
+                    <button type="object" name="action_validate" string="Validate"
+                            states="to_check" class="oe_highlight"
+                            groups="credit_sale_management.admin_payment_receipts"/>
+                    <button type="object" name="action_draft" string="Draft" attrs="{'invisible':[('state','not in',('done','to_check'))]}"
+                            groups="credit_sale_management.admin_payment_receipts"/>
+                    <button type="object" name="action_cancel" string="Cancel" states="draft" 
+                            groups="credit_sale_management.admin_payment_receipts"/>
+                    <button type="object" name="create_task_in_activity_mixin" string="Create a Task" 
+                            groups="credit_sale_management.admin_payment_receipts" attrs="{'invisible':[('task_message','=',False)]}" />
+                    <button type="object" name="create_task_in_activity_mixin" string="Create a Task" 
+                            groups="credit_sale_management.admin_payment_receipts" attrs="{'invisible':[('state','!=','done')]}" />
+
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_get_attachment_view" class="oe_stat_button" icon="fa-file-text-o" type="object">
+                            <field name="attachment_number" widget="statinfo" string="Documents"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Done" bg_color="bg-success" attrs="{'invisible': [('state', '!=', 'done')]}"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                        <field name="internal_reference" nolabel="1" attrs="{'invisible':[('state','=','draft')]}"/>
+                    </div>
+
+                    <!-- este es un div tipo alerta, esta bueno -->
+                    <!-- <div role="alert" class="alert alert-info">
+                        <field name="note_invoice" nolabel="1"/>
+                    </div> -->
+                    <!-- <div role="alert" class="alert alert-warning">
+                        <field name="note_invoice" nolabel="1"/>
+                    </div> -->
+                    <group string="General Information">
+                        <group>
+                            <field name="journal_id" 
+                            options="{'no_create': True, 'no_create_edit':True}" 
+                            attrs="{'readonly':['|',('state','in',('done','to_check')),('payroll_id','!=', False)]}"
+                            domain="[('type','=','bank'),('company_id','=',company_id),('id', 'in', allow_journal_id)]"
+                            groups="credit_sale_management.admin_payment_receipts"/>
+
+                            <field name="allow_journal_id" widget="many2many_tags"
+                            options="{'no_create': True, 'no_create_edit':True}" invisible='1'/>
+
+
+                            <field name="invoice_id" 
+                            options="{'no_create': True, 'no_create_edit':True}" 
+                            attrs="{'readonly':[('state','in',('done','to_check'))]}"/>
+                            <field name="note_invoice" attrs="{'invisible':[('state','=',('done'))]}"/>
+                            <field name="invoice_partner_id"/>
+                            <field name="invoice_payment_state" groups="credit_sale_management.admin_payment_receipts"/>
+                        </group>
+                        <group>
+                            <field name="company_id"/>
+                            <field name="user_id" groups="credit_sale_management.admin_payment_receipts"/>
+                            <field name="payment_id" groups="credit_sale_management.admin_payment_receipts"/>
+                            <field name="move_id" groups="credit_sale_management.admin_payment_receipts"/>
+                            <field name="payroll_id" groups="credit_sale_management.admin_payment_receipts"/>
+                            <field name='state_reconcile' groups="credit_sale_management.admin_payment_receipts"/>
+                            <field name="ref" groups="credit_sale_management.admin_payment_receipts"/>
+                        </group>
+                    </group>
+                    <group string="Payment Information">
+                        <group attrs="{'readonly':[('state','in',('done','to_check'))]}">
+                            <field name="invoice_amount_total" widget="monetary"/>
+                            
+                            <field name="invoice_amount_untaxed" widget="monetary"/>
+
+
+                            <field name="invoice_amount_residual" widget="monetary" attrs="{
+                                'invisible':[('amount_residual', '!=', 0.0)]}"/>
+                                
+                            <field name="amount_residual" widget="monetary" states="done"/>
+                            <label for="amount"/>
+                            <div name="amount_div" class="o_row">
+                                <field name="amount" widget="monetary" attrs="{'readonly':[('state','in',('done','to_check'))]}"/>
+                                <field name="currency_id"
+                                    attrs="{'readonly':[('state','in',('done','to_check'))]}"
+                                    options="{'no_create': True, 'no_open': True}"
+                                    groups="base.group_multi_currency"/>
+                            </div>
+                            <field name="payment_date" attrs="{'readonly':[('state','in',('done','to_check'))]}"/>
+                        </group>
+                        <group>
+                            <field name="invoice_date"/>
+                            <field name="invoice_date_due"/>
+                        </group>
+                    </group>
+                    <group attrs="{'invisible':[('payment_difference', '=', 0.0)]}">
+                        <group>
+                            <label for="payment_difference"/>
+                            <div>
+                                <field name="payment_difference"/>
+                                <field name="payment_difference_handling" widget="radio" nolabel="1" attrs="{'readonly':[('state','in',('done','to_check'))]}" groups="credit_sale_management.admin_payment_receipts"/>
+                            </div>
+                        </group>
+                    </group>
+                    <group attrs="{
+                        'invisible':['|',('final_payment_difference', '=', 0.0),('payment_difference_handling','=','open')]}">
+                        <group>
+                            <label for="final_payment_difference"/>
+                            <div>
+                                <field name="final_payment_difference"/>
+                            </div>
+                        </group>
+                    </group>
+                    <group attrs="{'invisible': [('payment_difference_handling','=','open')]}">
+                        <group>
+                            <label for="cash_discount"/>
+                            <div>
+                                <field name="cash_discount" widget="monetary" attrs="{'readonly':[('state','in',('done','to_check'))]}"/>
+                                <label for="discount_account_id" class="oe_edit_only" groups="credit_sale_management.admin_payment_receipts"/>
+                                <field name="discount_account_id" 
+                                    attrs="{'readonly':[('state','in',('done','to_check'))], 'required': [('payment_difference_handling', '=', 'reconcile')]}"
+                                    options="{'no_create': True, 'no_create_edit':True}" groups="credit_sale_management.admin_payment_receipts"/>
+                                <label for="discount_label" class="oe_edit_only" groups="credit_sale_management.admin_payment_receipts"/>
+                                <field name="discount_label" attrs="{'readonly':[('state','in',('done','to_check'))]}" groups="credit_sale_management.admin_payment_receipts"/>
+                            </div>
+                            <field name="note_cash_discount"/>
+                        </group>
+                    </group>
+                    <group>
+                        <!-- <field name="partner_discount" groups="credit_sale_management.admin_payment_receipts"/> -->
+                        <field name="partner_property_payment_term_id" groups="credit_sale_management.admin_payment_receipts"/>
+                        <field name="salesperson_cost" groups="credit_sale_management.admin_payment_receipts"/>
+                        <field name="task_message" groups="credit_sale_management.admin_payment_receipts"/>
+                        <field name="comment" attrs="{'required':[('payment_difference', '!=', 0.0)]}"/>
+                        <field name="payment_receipt_attachment_id" widget="many2many_binary" class="oe_inline"/>
+                    </group>
+                    <group string="Reporting">
+                        <field name="error_log" widget="many2many_tags" options="{'no_create': True, 'no_create_edit':True}" attrs="{'readonly':[('state','in',('done','to_check'))]}"/>
+                    </group>
+                </sheet>
+                <div class="o_attachment_preview"/>
+                <div class="oe_chatter">
+                    <!-- <field name="message_follower_ids"/> -->
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="payroll_payment_form_view" model="ir.ui.view">
+        <field name="name">payroll.payment.form.view</field>
+        <field name="model">payroll.payment</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,submit,done"/>
+                    <!-- <button type="object" name="demo" string="Demo"/> -->
+                    <widget name="attach_document" string="Attach Receipt" action="message_post"  highlight="1" attrs="{'invisible':[('state','not in',('submit','done'))]}"/>
+                    <button type="object" name="action_submit_payroll" string="Send" states="draft" class="oe_highlight"/>
+                    <button type="object" name="action_post_payroll" string="Post" states="submit" class="oe_highlight" groups="credit_sale_management.admin_payment_receipts"/> 
+                    <button type="object"  name="action_done_payroll" string="Done" states="post" class="oe_highlight" groups="credit_sale_management.admin_payment_receipts"/>
+                    <button type="object" name="action_draft_payroll" string="Draft" attrs="{'invisible':[('state','not in',('submit','done','cancel'))]}" groups="credit_sale_management.admin_payment_receipts"/>
+                    <button type="object" name="action_cancel_payroll" string="Cancel" states="draft" groups="credit_sale_management.admin_payment_receipts"/>
+                </header>
+                <div attrs="{'invisible': [('state', '!=', 'done')]}" modifiers="{'invisible': [('state', '!=', 'done')]}">
+                    <div role="alert" class="alert alert-warning" attrs="{'invisible': [('state_reconcile', '=', 'reconciled')]}" modifiers="{'invisible': [('state_reconcile', '!=', 'reconciled')]}">
+                        <span>The Reconciliation Process is Missing.</span>
+                        <!-- <field name="internal_reference" nolabel="1"/> -->
+                    </div>
+                </div>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="no_action" class="oe_stat_button" icon="fa-thumbs-o-down" type="object" attrs="{'invisible':[('error_count', '=', 0.0)]}">
+                            <field name="error_count" widget="statinfo" string="Error Count"/>
+                        </button>
+                        <button name="action_get_attachment_view" class="oe_stat_button" icon="fa-file-text-o" type="object">
+                            <field name="attachment_number" widget="statinfo" string="Documents"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Sent" bg_color="bg-info" attrs="{'invisible': [('state', '!=', 'submit')]}"/>
+                    <widget name="web_ribbon" title="Done" bg_color="bg-success" attrs="{'invisible': [('state', '!=', 'done')]}"/>
+                    <widget name="web_ribbon" title="Canceled" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'cancel')]}"/>
+                    
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                        <field name="internal_reference" nolabel="1"  attrs="{'invisible':[('total_amount','=', 0.0)]}"/>
+                    </div>
+                    <!-- <div role="alert" class="alert alert-warning" attrs="{'invisible': ['|'('state_reconcile', '==', 'reconcile'),('state','!=','done')]}" modifiers="{'invisible': ['|'('state_reconcile', '==', 'reconcile'),('state','!=','done')]}">
+                        <field name="internal_reference" nolabel="1"/>
+                    </div> -->
+                    <group>
+                        <group>
+                            <field name="journal_id" 
+                            options="{'no_create': True, 'no_create_edit':True}"
+                            attrs="{'readonly':[('state','!=','draft')]}"
+                            domain="[('type','=','bank'),('company_id','=',company_id),('id', 'in', allow_journal_id)]"/>
+                            <field name="create_date"/>
+                            <field name="account_date" groups="account.group_account_manager" attrs="{'invisible':[('account_date','=',False)]}"/>
+                            <field name="reconciliation_date" groups="account.group_account_manager" attrs="{'invisible':[('reconciliation_date','=',False)]}"/>
+                            <field name="user_id" groups="credit_sale_management.admin_payment_receipts"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="allow_journal_id" widget="many2many_tags"
+                            options="{'no_create': True, 'no_create_edit':True}" invisible='1'/>
+                        </group>
+                        <group>
+                            <field name='company_id'/>
+                            <field name='state_reconcile'/>
+                            <field name='cancel_reason' attrs="{'invisilbe':[('state','!=','cancel')]}" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="payment_receipt" string="Payment Receipt">
+                            <field name="payment_receipt" nolabel="1"
+                                   context="{'default_journal_id': journal_id, 'default_company_id': company_id}"
+                                   domain="[('state','=','draft'),('payroll_id','=', False),('company_id','=', company_id),('journal_id','=', journal_id)]"
+                            />
+                            <group colspan="4" class="mt-2 mt-md-0">
+                                <group colspan="4" class="mt-2 mt-md-0">
+                                    <field name="comment" nolabel="1" placeholder="Comment..."/>
+                                </group>
+                                <group class="oe_subtotal_footer oe_right" colspan="2" name="payment_report_total">
+                                        <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                            <label for="total_amount"/>
+                                        </div>
+                                    <field name="total_amount" nolabel="1" widget="monetary" class="oe_subtotal_footer_separator"/>
+                                    <field name="amount_residual" widget="monetary" class="oe_subtotal_footer_separator" attrs="{'invisible': [('amount_residual', '=', 0)]}"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="o_attachment_preview"/>
+                <div class="oe_chatter">
+                    <!-- <field name="message_follower_ids"/> -->
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- graph view -->
+    <record id="payment_report_graph_view" model="ir.ui.view">
+        <field name="name">payment.report.graph</field>
+        <field name="model">payment.report</field>
+        <field name="arch" type="xml">
+            <graph string="Paymemt Receipt" sample="1">
+                <field name="create_date" interval="day"/>
+                <field name="amount" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="payroll_payment_graph_view" model="ir.ui.view">
+        <field name="name">payroll.payment.graph</field>
+        <field name="model">payroll.payment</field>
+        <field name="arch" type="xml">
+            <graph string="Payroll Payment" sample="1">
+                <field name="create_date" interval="day"/>
+                <field name="total_amount" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- pivot view -->
+    <record id="payment_report_pivot_view" model="ir.ui.view">
+        <field name="name">payment.report.pivot.view</field>
+        <field name="model">payment.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Payment Report" sample="1">
+                <field name="create_uid" type="row"/>
+                <field name="create_date" type="col"/>
+                <field name="amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="payroll_payment_pivot_view" model="ir.ui.view">
+        <field name="name">payroll.payment.pivot.view</field>
+        <field name="model">payroll.payment</field>
+        <field name="arch" type="xml">
+            <pivot string="Payroll Payment" sample="1">
+                <field name="create_uid" type="row"/>
+                <field name="create_date" type="col"/>
+                <field name="total_amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- actvivity view -->
+    <record id="payment_report_activity_view" model="ir.ui.view">
+        <field name="name">payment.report.activity.view</field>
+        <field name="model">payment.report</field>
+        <field name="arch" type="xml">
+            <activity string="Payment Report">
+                <templates>
+                    <div t-name="activity-box">
+                        <div>
+                            <field name="name" display="full"/>
+                            <field name="invoice_partner_id" muted="1" display="full"/>
+                        </div>
+                    </div>
+                </templates>
+            </activity>
+        </field>
+    </record>
+
+    <menuitem name="Credit Managment" id="credit_managment_menu" web_icon="credit_sale_management,static/description/icon.png" sequence="8"/>
+
+    <menuitem name="Invoices" id="cm_invoices_menu" parent="credit_managment_menu" action="credit_sale_management.action_move_out_invoice_type_cm" sequence="2"/>
+
+    <menuitem name="Payment Report" id="payment_report_menu" parent="credit_managment_menu" sequence="1"/>
+    
+    <menuitem name="Payroll" id="payroll_payment_menu" parent="payment_report_menu" action="payroll_payment" sequence="1"/>
+    <menuitem name="Payment Receipt" id="payment_receipt_menu" parent="payment_report_menu" action="payment_report" sequence="2" groups="credit_sale_management.admin_payment_receipts"/>
+
+    <menuitem name="Reports" id="payment_reports" parent="credit_managment_menu" sequence="3" groups="credit_sale_management.admin_payment_receipts"/>
+    <menuitem name="Configuration" id="payment_configuration" parent="credit_managment_menu" sequence="4" groups="credit_sale_management.admin_payment_receipts"/>
+
+    <menuitem name="Saleperson Bank" id="saleperson_bank_menu" parent="payment_configuration" action="saleperson_bank" sequence="1" groups="credit_sale_management.admin_payment_receipts"/>
+    <menuitem name="Payment Error" id="payment_error_log_menu" parent="payment_configuration" action="payment_error_log" sequence="1" groups="credit_sale_management.admin_payment_receipts"/>
+
+</odoo>

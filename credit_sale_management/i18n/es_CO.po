@@ -1,0 +1,1167 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* credit_sale_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-30 21:10+0000\n"
+"PO-Revision-Date: 2022-01-30 16:29-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_CO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: credit_sale_management
+#: model:ir.actions.report,print_report_name:credit_sale_management.report_payment_receipt
+msgid "\"%s\" % (object.name)"
+msgstr ""
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_kanban_view
+msgid ""
+"<i class=\"fa fa-paperclip\" role=\"img\" aria-label=\"Attachment Number\" "
+"title=\"Attachment Number\"/>"
+msgstr ""
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.res_config_settings_view_form_account_inherit
+msgid "<span class=\"o_form_label\">Discounts Account</span>"
+msgstr "<span class=\"o_form_label\">Cuenta para descuentos</span>"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.res_config_settings_view_form_account_inherit
+msgid "<span class=\"o_form_label\">Grace Days To Report</span>"
+msgstr "<span class=\"o_form_label\">Dias de gracia para el reporte</span>"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.res_config_settings_view_form_account_inherit
+msgid "<span class=\"o_form_label\">Grace Days</span>"
+msgstr "<span class=\"o_form_label\">Dias de gracia</span>"
+
+#. module: credit_sale_management
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_form_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_receipt_int
+msgid "<strong>Customer: </strong>"
+msgstr "<strong>Cliente: </strong>"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_receipt_int
+msgid "<strong>Date Due: </strong>"
+msgstr "<strong>Fecha de Vencimiento: </strong>"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_receipt_int
+msgid "<strong>Invoice Ammount Residual: </strong>"
+msgstr "<strong>Saldo de la Factura: </strong>"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_receipt_int
+msgid "<strong>Invoice Ammount: </strong>"
+msgstr "<strong>Valor de la Factura: </strong>"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_receipt_int
+msgid "<strong>Invoice Date: </strong>"
+msgstr "<strong>Fecha de la Factura: </strong>"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_receipt_int
+msgid "<strong>Invoice Information</strong>"
+msgstr "<strong>Información de la factura</strong>"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_receipt_int
+msgid "<strong>Invoice: </strong>"
+msgstr "<strong>Factura: </strong>"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_receipt_int
+msgid "<strong>Payment Amount: </strong>"
+msgstr "<strong>Valor Pagado: </strong>"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_receipt_int
+msgid "<strong>Payment Date: </strong>"
+msgstr "<strong>Fecha del Pago: </strong>"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_receipt_int
+msgid "<strong>Payment Difference: </strong>"
+msgstr "<strong>Saldo: </strong>"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_receipt_int
+msgid "<strong>Payment Information</strong>"
+msgstr "<strong>Información del pago</strong>"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_receipt_int
+msgid "<strong>Saleperson: </strong>"
+msgstr "<strong>Vendedor: </strong>"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__account_date
+msgid "Account Date"
+msgstr "Fecha Contable"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__move_id
+msgid "Account Move"
+msgstr "Movimiento Contable"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__message_needaction
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__activity_ids
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__activity_exception_decoration
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__activity_state
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__activity_type_icon
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__allow_journal_id
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__allow_journal_id
+msgid "Allow Journal"
+msgstr "Banco permitido"
+
+#. module: credit_sale_management
+#: model:ir.module.category,description:credit_sale_management.category_payment_receipts
+msgid ""
+"Allow generate an intermediate step for salesperson to register payments in "
+"accounting"
+msgstr ""
+"Permitir generar un paso intermedio para que el vendedor registre pagos en "
+"contabilidad"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__amount
+msgid "Amount"
+msgstr "Monto"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__approving_user
+msgid "Approving User"
+msgstr "Usuario Aprovador"
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__task_message__attach_receipt
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_form_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_kanban_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_form_view
+msgid "Attach Receipt"
+msgstr "Adjuntar Recibo"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__payment_receipt_attachment_id
+msgid "Attachment"
+msgstr "Adjunto archivo"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__message_attachment_count
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__message_attachment_count
+msgid "Attachment Count"
+msgstr "Recuento de Archivos"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__attachment_number
+msgid "Attachment Number"
+msgstr "Cantidad de Adjuntos"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_tree_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_kanban_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_tree_view
+msgid "Attachments"
+msgstr "Archivos adjuntos"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__journal_id
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__journal_id
+#: model:ir.model.fields,field_description:credit_sale_management.field_saleperson_bank__journal_id
+msgid "Bank"
+msgstr "Banco"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.cancel_reason_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_form_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.cancel_reason_wizard_form_view
+msgid "Cancel Payroll Payment"
+msgstr "Cancelar Planilla de Pago"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__cancel_reason
+msgid "Cancel Reason"
+msgstr "Razón de Cancelación"
+
+#. module: credit_sale_management
+#: model:ir.model,name:credit_sale_management.model_cancel_reason_wizard
+msgid "Cancel Reason Wizard"
+msgstr "Razón de Cancelación"
+
+#. module: credit_sale_management
+#: code:addons/credit_sale_management/models/payments.py:0
+#, python-format
+msgid "Cancel Reazon Wizard"
+msgstr "Razón de Cancelación"
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__state__cancel
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payroll_payment__state__cancel
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_form_view
+msgid "Canceled"
+msgstr "Cancelado"
+
+#. module: credit_sale_management
+#: code:addons/credit_sale_management/models/payments.py:0
+#, python-format
+msgid "Cannot be modified after reconciled"
+msgstr "No se puede modificar después de la conciliación."
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__cash_discount
+msgid "Cash Discount"
+msgstr "Descuento Financiero"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_cancel_reason_wizard__comment
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__comment
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__comment
+msgid "Comment"
+msgstr "Comentario"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_form_view
+msgid "Comment..."
+msgstr "Comentarios..."
+
+#. module: credit_sale_management
+#: model:ir.model,name:credit_sale_management.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__company_id
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__company_id
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_search_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_search_view
+msgid "Company"
+msgstr "Compañia"
+
+#. module: credit_sale_management
+#: model:ir.model,name:credit_sale_management.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de Configuración"
+
+#. module: credit_sale_management
+#: model:ir.ui.menu,name:credit_sale_management.payment_configuration
+msgid "Configuration"
+msgstr "Ajustes"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_form_view
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__confirm_date
+msgid "Confirm Date"
+msgstr "Fecha de Confirmación"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_search_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_search_view
+msgid "Create Date"
+msgstr "Fecha de Creación"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_form_view
+msgid "Create a Task"
+msgstr "Crear una Tarea"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_cancel_reason_wizard__create_uid
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_error_log__create_uid
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__create_uid
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__create_uid
+#: model:ir.model.fields,field_description:credit_sale_management.field_saleperson_bank__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_cancel_reason_wizard__create_date
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_error_log__create_date
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__create_date
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__create_date
+#: model:ir.model.fields,field_description:credit_sale_management.field_saleperson_bank__create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: credit_sale_management
+#: model:ir.ui.menu,name:credit_sale_management.credit_managment_menu
+msgid "Credit Managment"
+msgstr "Gestión de Cartera"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__currency_id
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__currency_id
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__invoice_partner_id
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__partner_type__customer
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_search_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_search_view
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__partner_property_payment_term_id
+msgid "Customer Payment Terms"
+msgstr "Condiciones de pago del cliente"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__payment_date
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: credit_sale_management
+#: code:addons/credit_sale_management/models/payments.py:0
+#, python-format
+msgid "Debes asignar a un pago a la planilla"
+msgstr ""
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.res_config_settings_view_form_account_inherit
+msgid "Define the grace days to the invoice payment"
+msgstr "Definir los días de gracia para el pago de la factura"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.res_config_settings_view_form_account_inherit
+msgid "Define the grace days to the report the payment"
+msgstr "Define la cantidad de dias de gracia para el reporte del pago"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__destination_account_id
+msgid "Destination Account"
+msgstr "Cuenta destiono"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_account_payment_term__discount
+msgid "Discount"
+msgstr "Descuento"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__discount_account_id
+#: model:ir.model.fields,field_description:credit_sale_management.field_res_company__payment_discount_account_id
+#: model:ir.model.fields,field_description:credit_sale_management.field_res_config_settings__payment_discount_account_id
+msgid "Discount Account"
+msgstr "Cuenta para el descuento"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__discount_label
+msgid "Discount Line Label"
+msgstr "Etiqueta para la cuenta del descuento"
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__task_message__discount_value
+msgid "Discount Value Error"
+msgstr "Error de valor de descuento"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_account_payment__display_name
+#: model:ir.model.fields,field_description:credit_sale_management.field_account_payment_term__display_name
+#: model:ir.model.fields,field_description:credit_sale_management.field_cancel_reason_wizard__display_name
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_error_log__display_name
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__display_name
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__display_name
+#: model:ir.model.fields,field_description:credit_sale_management.field_res_company__display_name
+#: model:ir.model.fields,field_description:credit_sale_management.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:credit_sale_management.field_saleperson_bank__display_name
+msgid "Display Name"
+msgstr "Nombre Público"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_form_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_form_view
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__state__done
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payroll_payment__state__done
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_form_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_search_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_form_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_search_view
+msgid "Done"
+msgstr "Hecho"
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__state__draft
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payroll_payment__state__draft
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_form_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_search_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_form_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_search_view
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__invoice_date_due
+msgid "Due Date"
+msgstr "Fecha de Vencimiento"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__error_count
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_form_view
+msgid "Error Count"
+msgstr "Cantidad de Errores"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__error_log
+msgid "Error Log"
+msgstr "Registro de Errores"
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__task_message__invoice_error
+msgid "Error en la Factura"
+msgstr ""
+
+#. module: credit_sale_management
+#: code:addons/credit_sale_management/models/payments.py:0
+#, python-format
+msgid ""
+"Este pago %s ya esta relacionado el la planilla %s, no se puede relacionar "
+"dos veces"
+msgstr ""
+"Este pago %s ya esta relacionado el la planilla %s, no se puede relacionar "
+"dos veces"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__final_payment_difference
+msgid "Final Payment Difference"
+msgstr "Diferencia de pago final"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__message_follower_ids
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__message_channel_ids
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__message_partner_ids
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,help:credit_sale_management.field_payment_report__activity_type_icon
+#: model:ir.model.fields,help:credit_sale_management.field_payroll_payment__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_form_view
+msgid "General Information"
+msgstr "Información General"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_res_config_settings__grace_days_to_report
+msgid "Grace Days to Report"
+msgstr "Dias de gracias para el reporte del pago"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_res_config_settings__grace_days
+msgid "Grace days"
+msgstr "Dias de gracia para el descuento"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_search_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_search_view
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: credit_sale_management
+#: model_terms:ir.actions.act_window,help:credit_sale_management.saleperson_bank
+msgid "Here you can de bank domain for the saleperson"
+msgstr "Aquí puedes hacer dominio bancario para el vendedor"
+
+#. module: credit_sale_management
+#: model_terms:ir.actions.act_window,help:credit_sale_management.payment_error_log
+msgid "Here you can define the kind of error logs"
+msgstr "Aqui puedes definir el tipo de errores"
+
+#. module: credit_sale_management
+#: model_terms:ir.actions.act_window,help:credit_sale_management.payment_report
+msgid "Here you can register the payments"
+msgstr "Aqui puedes registrar los pagos"
+
+#. module: credit_sale_management
+#: model_terms:ir.actions.act_window,help:credit_sale_management.payroll_payment
+msgid "Here you can register the payroll"
+msgstr "Aqui puedes registrar las planillas"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_account_payment__id
+#: model:ir.model.fields,field_description:credit_sale_management.field_account_payment_term__id
+#: model:ir.model.fields,field_description:credit_sale_management.field_cancel_reason_wizard__id
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_error_log__id
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__id
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__id
+#: model:ir.model.fields,field_description:credit_sale_management.field_res_company__id
+#: model:ir.model.fields,field_description:credit_sale_management.field_res_config_settings__id
+#: model:ir.model.fields,field_description:credit_sale_management.field_saleperson_bank__id
+msgid "ID"
+msgstr "Id"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__activity_exception_icon
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,help:credit_sale_management.field_payment_report__activity_exception_icon
+#: model:ir.model.fields,help:credit_sale_management.field_payroll_payment__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,help:credit_sale_management.field_payment_report__message_needaction
+#: model:ir.model.fields,help:credit_sale_management.field_payment_report__message_unread
+#: model:ir.model.fields,help:credit_sale_management.field_payroll_payment__message_needaction
+#: model:ir.model.fields,help:credit_sale_management.field_payroll_payment__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,help:credit_sale_management.field_payment_report__message_has_error
+#: model:ir.model.fields,help:credit_sale_management.field_payment_report__message_has_sms_error
+#: model:ir.model.fields,help:credit_sale_management.field_payroll_payment__message_has_error
+#: model:ir.model.fields,help:credit_sale_management.field_payroll_payment__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__invoice_id
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_search_view
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__invoice_amount_total
+msgid "Invoice Amount Total"
+msgstr "Monto Total Facturado"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__invoice_amount_untaxed
+msgid "Invoice Amount Untaxed"
+msgstr "Monto Libre de Impuestos"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__invoice_date
+msgid "Invoice/Bill Date"
+msgstr "Fecha de Factura"
+
+#. module: credit_sale_management
+#: model:ir.ui.menu,name:credit_sale_management.cm_invoices_menu
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__message_is_follower
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_search_view
+msgid "Journal"
+msgstr "Banco"
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__payment_difference_handling__open
+msgid "Keep open"
+msgstr "Mantener Abierta"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_account_payment____last_update
+#: model:ir.model.fields,field_description:credit_sale_management.field_account_payment_term____last_update
+#: model:ir.model.fields,field_description:credit_sale_management.field_cancel_reason_wizard____last_update
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_error_log____last_update
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report____last_update
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment____last_update
+#: model:ir.model.fields,field_description:credit_sale_management.field_res_company____last_update
+#: model:ir.model.fields,field_description:credit_sale_management.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:credit_sale_management.field_saleperson_bank____last_update
+msgid "Last Modified on"
+msgstr "Última Modificación el"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_cancel_reason_wizard__write_uid
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_error_log__write_uid
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__write_uid
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__write_uid
+#: model:ir.model.fields,field_description:credit_sale_management.field_saleperson_bank__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_cancel_reason_wizard__write_date
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_error_log__write_date
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__write_date
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__write_date
+#: model:ir.model.fields,field_description:credit_sale_management.field_saleperson_bank__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__message_main_attachment_id
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:res.groups,name:credit_sale_management.admin_payment_receipts
+msgid "Manager"
+msgstr "Administrador"
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__payment_difference_handling__reconcile
+msgid "Mark as fully paid"
+msgstr "Marcar como pagado"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__ref
+msgid "Memo"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__message_has_error
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__message_ids
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__my_activity_date_deadline
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_search_view
+msgid "My Payroll Payment"
+msgstr "Mis planillas de pago"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_error_log__name
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__internal_reference
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__internal_reference
+msgid "Name"
+msgstr "Nombre"
+
+#. module: credit_sale_management
+#: code:addons/credit_sale_management/models/payments.py:0
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__new_invoice_amount_residual
+msgid "New Invoice Residual Amount"
+msgstr "Nuevo monto adeudado"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__activity_date_deadline
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__activity_summary
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__activity_type_id
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__not_discount
+msgid "Not Discount"
+msgstr "Sin Descuento"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__not_invoice
+msgid "Not Invoice"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__not_on_time
+msgid "Not On Time"
+msgstr "No a tiempo"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__note_cash_discount
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__note_invoice
+msgid "Note"
+msgstr "Nota"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__message_needaction_counter
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__message_has_error_counter
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,help:credit_sale_management.field_payment_report__message_needaction_counter
+#: model:ir.model.fields,help:credit_sale_management.field_payroll_payment__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,help:credit_sale_management.field_payment_report__message_has_error_counter
+#: model:ir.model.fields,help:credit_sale_management.field_payroll_payment__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,help:credit_sale_management.field_payment_report__message_unread_counter
+#: model:ir.model.fields,help:credit_sale_management.field_payroll_payment__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: credit_sale_management
+#: code:addons/credit_sale_management/models/payments.py:0
+#, python-format
+msgid "Para la Planilla %s: no se puede enviar sin ningun pago registrado"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__partner_type
+msgid "Partner Type"
+msgstr "Tipo de Contacto"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_graph_view
+msgid "Paymemt Receipt"
+msgstr "Recibo de Pago"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__payment_id
+msgid "Payment"
+msgstr "Pago"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__payment_difference
+msgid "Payment Difference"
+msgstr "Diferencia de pago"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__payment_difference_handling
+msgid "Payment Difference Handling"
+msgstr "Gestión de diferencias de pago"
+
+#. module: credit_sale_management
+#: model:ir.ui.menu,name:credit_sale_management.payment_error_log_menu
+msgid "Payment Error"
+msgstr "Errores del pago"
+
+#. module: credit_sale_management
+#: model:ir.actions.act_window,name:credit_sale_management.payment_error_log
+#: model:ir.model,name:credit_sale_management.model_payment_error_log
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_error_log_form_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_error_log_tree_view
+msgid "Payment Error Log"
+msgstr "Registro de errores de pago"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_form_view
+msgid "Payment Information"
+msgstr "Información de Pago"
+
+#. module: credit_sale_management
+#: model:ir.actions.report,name:credit_sale_management.report_payment_receipt
+#: model:ir.model.fields,field_description:credit_sale_management.field_account_payment__payment_receipt_id
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__payment_receipt
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__payment_receipt
+#: model:ir.ui.menu,name:credit_sale_management.payment_receipt_menu
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_form_view
+msgid "Payment Receipt"
+msgstr "Recibo de Pago"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__payment_receipt_number
+msgid "Payment Receipt Number"
+msgstr "Número de recibo de pago"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_receipt_int
+msgid "Payment Receipt:"
+msgstr "Recibo de Pago:"
+
+#. module: credit_sale_management
+#: model:ir.module.category,name:credit_sale_management.category_payment_receipts
+msgid "Payment Receipts"
+msgstr "Recibos de Pago"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__name
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__name
+msgid "Payment Reference"
+msgstr "Referencia de pago"
+
+#. module: credit_sale_management
+#: model:ir.actions.act_window,name:credit_sale_management.payment_report
+#: model:ir.model,name:credit_sale_management.model_payment_report
+#: model:ir.ui.menu,name:credit_sale_management.payment_report_menu
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_activity_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_pivot_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_tree_view
+msgid "Payment Report"
+msgstr "Recibo de pago"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__invoice_payment_state
+msgid "Payment State"
+msgstr "Estado del Pago"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__payment_support
+msgid "Payment Support"
+msgstr "Soporte del Pago"
+
+#. module: credit_sale_management
+#: model:ir.model,name:credit_sale_management.model_account_payment_term
+msgid "Payment Terms"
+msgstr "Plazos de pago"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__payment_type
+msgid "Payment Type"
+msgstr "Tipo de Pago"
+
+#. module: credit_sale_management
+#: model:ir.model,name:credit_sale_management.model_account_payment
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_account_payment__payroll_id
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__payroll_id
+#: model:ir.ui.menu,name:credit_sale_management.payroll_payment_menu
+msgid "Payroll"
+msgstr "Planilla de pagos"
+
+#. module: credit_sale_management
+#: model:ir.actions.act_window,name:credit_sale_management.payroll_payment
+#: model:ir.model,name:credit_sale_management.model_payroll_payment
+#: model:ir.model.fields,field_description:credit_sale_management.field_cancel_reason_wizard__payroll_payment_id
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_graph_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_pivot_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_tree_view
+msgid "Payroll Payment"
+msgstr "Planilla de pagos"
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payroll_payment__state__post
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_form_view
+msgid "Post"
+msgstr "Publicar"
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__payment_type__inbound
+msgid "Receive Money"
+msgstr "Recibir dinero"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__reconciliation_date
+msgid "Reconciliation Date"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__state_reconcile
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__state_reconcile
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_search_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_search_view
+msgid "Reconciliation Status"
+msgstr "Estado de la Conciliacion"
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__state__reject
+msgid "Reject"
+msgstr "Rechazar"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_form_view
+msgid "Reporting"
+msgstr "Informes"
+
+#. module: credit_sale_management
+#: model:ir.ui.menu,name:credit_sale_management.payment_reports
+msgid "Reports"
+msgstr "Informes"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__amount_residual
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__invoice_amount_residual
+msgid "Residual Amount"
+msgstr "Monto adeudado"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__activity_user_id
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__message_has_sms_error
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__user_id
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__user_id
+#: model:ir.model.fields,field_description:credit_sale_management.field_saleperson_bank__name
+#: model:ir.model.fields,field_description:credit_sale_management.field_saleperson_bank__user_id
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_search_view
+msgid "Saleperson"
+msgstr "Vendedor"
+
+#. module: credit_sale_management
+#: model:ir.actions.act_window,name:credit_sale_management.saleperson_bank
+#: model:ir.ui.menu,name:credit_sale_management.saleperson_bank_menu
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.saleperson_bank_form_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.saleperson_bank_tree_view
+msgid "Saleperson Bank"
+msgstr "Banco Vendedor"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_search_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_search_view
+msgid "Salesperson"
+msgstr "Vendedor"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__salesperson_cost
+msgid "Salesperson Cost"
+msgstr "Costo para el Vendedor"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_search_view
+msgid "Search Payment Report"
+msgstr "Buscar recibos de pago"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_search_view
+msgid "Search Payroll Payment"
+msgstr "Buscar planilla de pago"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.res_config_settings_view_form_account_inherit
+msgid "Select Account To Payment"
+msgstr "Seleccionar cuenta para pago"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.res_config_settings_view_form_account_inherit
+msgid "Select the default account for discounts"
+msgstr "Seleccione la cuenta predeterminada para descuentos"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_form_view
+msgid "Send"
+msgstr "Enviar"
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__payment_type__outbound
+msgid "Send Money"
+msgstr "Enviar dinero"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_form_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_search_view
+msgid "Sent"
+msgstr "Enviado"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_error_log__severity
+msgid "Severity"
+msgstr "Gravedad"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__state
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_search_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_search_view
+msgid "State"
+msgstr "Estado"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__state
+msgid "Status"
+msgstr "Estado"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,help:credit_sale_management.field_payment_report__activity_state
+#: model:ir.model.fields,help:credit_sale_management.field_payroll_payment__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payroll_payment__state__submit
+msgid "Submit"
+msgstr "Enviar"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__task_message
+msgid "Task Message"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,help:credit_sale_management.field_payment_report__partner_property_payment_term_id
+msgid ""
+"This payment term will be used instead of the default one for sales orders "
+"and customer invoices"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__state__to_check
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_search_view
+msgid "To Check"
+msgstr "A verificar"
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__state_reconcile__to_reconcile
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payroll_payment__state_reconcile__to_reconcile
+msgid "To reconcile"
+msgstr "A conciliar"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__amount_residual
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__total_amount
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_tree_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_kanban_view
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payroll_payment_tree_view
+msgid "Total Amount"
+msgstr "Monto Total"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,help:credit_sale_management.field_payment_report__activity_exception_decoration
+#: model:ir.model.fields,help:credit_sale_management.field_payroll_payment__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__message_unread
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__message_unread_counter
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:res.groups,name:credit_sale_management.user_payment_receipts
+msgid "User: Show only his own documents"
+msgstr "Usuario: Mostrar solo sus propios documentos"
+
+#. module: credit_sale_management
+#: model_terms:ir.ui.view,arch_db:credit_sale_management.payment_report_form_view
+msgid "Validate"
+msgstr "Validar"
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__partner_type__supplier
+msgid "Vendor"
+msgstr "Proveedor"
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__website_message_ids
+#: model:ir.model.fields,field_description:credit_sale_management.field_payroll_payment__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,help:credit_sale_management.field_payment_report__website_message_ids
+#: model:ir.model.fields,help:credit_sale_management.field_payroll_payment__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields,field_description:credit_sale_management.field_payment_report__attachment_number
+msgid "attachment_number"
+msgstr ""
+
+#. module: credit_sale_management
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payment_report__state_reconcile__reconciled
+#: model:ir.model.fields.selection,name:credit_sale_management.selection__payroll_payment__state_reconcile__reconciled
+msgid "reconciled"
+msgstr "Conciliado"
+
+#. module: credit_sale_management
+#: model:ir.model,name:credit_sale_management.model_saleperson_bank
+msgid "saleperson.bank"
+msgstr "Banco del Vendedor"

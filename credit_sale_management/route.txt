@@ -1,0 +1,11 @@
+Funcionalidades que debe tener el modulo
+
+El modulo debe:
+1- Permitir ver las obligaciones pendientes que tienen **solo** sus clientes.
+        se utilizara la misma informacion del modelo de contabilidad.
+2- Registrar pagos, una vez se generen deben ir a un estado intermedio de validacion que debe ser auditado por el area encargada.
+        model - se debe crear uno nuevo con todos los elementos del modelo de pago
+        status -
+        kpi -
+4- Registrar consignaciones, una vez se genere el registro se llevara a un estado intermedio de validacion.
+        model- se debe crear un modelo luego este se debe conectar con el modelo de soportes de banco - intentar la conciliacion

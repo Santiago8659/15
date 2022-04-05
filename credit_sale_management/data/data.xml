@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- Payment Error Define -->
+
+    <data>
+        <record id="first_generate_fist_payment" model="payment.error.log">
+            <field name="name">Fist Generate First Payment</field>
+            <field name="severity">3</field>
+        </record>
+    </data>
+    <data>
+        <record id="discount_not_applicable" model="payment.error.log">
+            <field name="name">Discount Not Applicable</field>
+            <field name="severity">3</field>
+        </record>
+    </data>
+    <data>
+        <record id="cash_receipt_not_attached" model="payment.error.log">
+            <field name="name">Cash Receipt Not Attached</field>
+            <field name="severity">3</field>
+        </record>
+    </data>
+    <data>
+        <record id="payment_date_different_from_the_report" model="payment.error.log">
+            <field name="name">Payment Date Different From The Report</field>
+            <field name="severity">3</field>
+        </record>
+    </data>
+
+
+    
+        <!-- Payment Report Sequences -->
+       
+    <record id="sequence_payment_report" model="ir.sequence">
+        <field name="name">Payment report sequence</field>
+        <field name="code">payment.report</field>
+        <field name="prefix">PAY</field>
+        <field name="padding">5</field>
+        <field eval="False" name="company_id"/>
+    </record>
+
+        <!-- Payroll Payment Sequences -->
+
+        <record id="sequence_payroll_payment" model="ir.sequence">
+            <field name="name">Payroll Payment sequence</field>
+            <field name="code">payroll.payment</field>
+            <field name="prefix">PR</field>
+            <field name="padding">5</field>
+            <field eval="False" name="company_id"/>
+        </record>
+</odoo>

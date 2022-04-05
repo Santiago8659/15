@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+        <record id="res_partner_form_view_inherit_credit_management" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit.credit_management</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='sales_purchases']" position="after">
+                    <page string="Credit Management Actions"  attrs="{'invisible': [('credit_management_actions_ids', '=', [])]}">
+                        <!-- attrs="{'invisible':[('count_cma','!=',0)]}" -->
+                        <!-- <field mame="count_cma"/> -->
+                        <field name="credit_management_actions_ids" 
+                        widget="one2many_list"
+                        nolabel="1"
+                        >   
+                            <form>
+                                <group>
+                                    <field name="partner_id"/>
+                                    <field name="invoice_id"/>
+                                    <field name="type_contact" required="1"/>
+                                    <field name="comment" required="1"/>
+                                    <field name="estimated_date_visit" attrs="{'invisible':[('type_contact','!=','salesperson_visit')], 'required':[('type_contact','=','salesperson_visit')]}"/>
+                                </group>
+                            </form>
+                            <tree string="Credit Management Actions" default_order="create_date desc" decoration-danger="invoice_payment_status == 'not_paid'" decoration-success="invoice_payment_status in ('paid','in_payment')">
+                                <!-- Displayed fields -->
+                                <field name="create_date"/>
+                                <field name="invoice_id"/>
+                                <field name="invoice_date" optional="show"/>
+                                <field name="invoice_date_due" widget="remaining_days" attrs="{'invisible': [['invoice_payment_status', 'in', ('paid', 'in_payment', 'reversed')]]}" optional="show"/>
+                                <field name="type_contact"/>
+                                <field name="comment"/>
+                                <field name="create_uid" widget="many2one_avatar_user"/>
+                                <field name="invoice_payment_status" invisible="1"/>
+                                <field name="activity_ids" widget="list_activity" optional="show"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

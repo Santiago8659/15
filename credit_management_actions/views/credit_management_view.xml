@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <!-- Actions -->
+    <record id="credit_management" model="ir.actions.act_window">
+        <field name="name">Credit Managment</field>
+        <field name="res_model">credit.management</field>
+        <field name="view_mode">tree,form,pivot,graph,kanban,activity</field>
+        <field name="help" type="html">
+            <p>
+                Here you can manage the record of credit management actions
+            </p>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="credit_management_search_view" model="ir.ui.view">
+        <field name="name">credit.management.search.view</field>
+        <field name="model">credit.management</field>
+        <field name="arch" type="xml">
+            <search string="Search Credit Management">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="invoice_id"/>
+                <field name="saleperson_id"/>
+                <field name="create_uid"/>
+                <!-- <field name="user_id"/>
+                <field name="journal_id"/>
+                <filter string="Draft" domain="[('state', '=', 'draft')]" name="state_draft_filter"/>
+                <filter string="To Check" domain="[('state', '=', 'to_check')]" name="state_to_check_filter"/>
+                <separator/>
+                <filter string="Done" domain="[('state', '=', 'done')]" name="state_done_filter"/>
+                <separator/>
+                -->
+                <filter string="Create Date" name="filter_create_date" date="create_date"/>
+                <group expand="0" string="Group By">
+                    <filter string="Collector" name="salesperson" domain="[]" context="{'group_by': 'create_uid'}"/>
+                    <filter string="Customer" name="customer" domain="[]" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Create Date" name="order_month" domain="[]" context="{'group_by': 'create_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+   
+    <!-- Kanban View -->
+    <record id="credit_management_kanban_view" model="ir.ui.view">
+        <field name="name">credit.management.kanban.view</field>
+        <field name="model">credit.management</field>
+        <field name="arch" type="xml">
+            <kanban class="oe_kanban_mobile">
+                <field name="create_date" optional="show"/>
+                <field name="partner_id" optional="show"/>
+                <field name="invoice_id" optional="show"/>
+                <field name="invoice_date" optional="show"/>
+                <field name="invoice_date_due" widget="remaining_days" attrs="{'invisible': [['invoice_payment_status', 'in', ('paid', 'in_payment', 'reversed')]]}" optional="show"/>
+                <field name="type_contact"/>
+                <field name="invoice_payment_status"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_record_top mb16">
+                                <div class="o_kanban_record_headings mt4">
+                                    <strong><span><t t-esc="record.partner_id.value" class="o_kanban_record_title"/> (<t t-esc="record.invoice_id.value" class="o_kanban_record_title"/>)</span></strong>
+                                </div>
+                                <!-- <strong><field name="amount" widget="monetary"/></strong> -->
+                            </div>
+                            <!-- <div class="row">
+                                <div class="col-12" >
+                                    <span  t-if="record.invoice_payment_status.value = 'in_payment'">
+
+                                    
+                                        <span class="alert alert-warning" t-if="record.invoice_payment_status.value = 'paid'">
+                                            <t t-esc="record.invoice_date.value" widget="remaining_days"/>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div> -->
+                            <div class="o_kanban_record_bottom">
+                                <div class="oe_kanban_bottom_left text-muted">
+                                    <span><t t-esc="record.create_date.value"/></span>
+                                    <field name="activity_ids" widget="kanban_activity"/>
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <field name="invoice_payment_status" widget="label_selection" options="{'classes': {'not_paid': 'default', 'done': ['paid','in_payment']}}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+            
+        </field>
+    </record>
+    <!-- Tree view-->
+    <record id="credit_management_tree_view" model="ir.ui.view">
+        <field name="name">credit.management.tree.view</field>
+        <field name="model">credit.management</field>
+        <field name="arch" type="xml">
+            <tree string="Credit Management" decoration-danger="invoice_payment_status == 'not_paid'" decoration-success="invoice_payment_status in ('paid','in_payment')">
+                <field name="create_date" optional="show"/>
+                <field name="partner_id" optional="show"/>
+                <field name="invoice_id" optional="show"/>
+                <field name="invoice_date" optional="show"/>
+                <field name="invoice_date_due" widget="remaining_days" attrs="{'invisible': [['invoice_payment_status', 'in', ('paid', 'in_payment', 'reversed')]]}" optional="show"/>
+                <field name="type_contact"/>
+                <field name="comment"/>
+                <field name="create_uid" widget="many2one_avatar_user"/>
+                <field name="saleperson_id"/>
+                <field name="invoice_amount_total" optional="show" sum="Total Invoice Amount" widget="monetary" decoration-bf="True"/>
+                <field name="currency_id" invisible="1"/>
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="invoice_payment_status" widget="badge" decoration-danger="invoice_payment_status == 'not_paid'" decoration-warning="invoice_payment_status in ('partial', 'in_payment')" decoration-success="invoice_payment_status in ('paid', 'reversed')"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view -->
+    <record id="credit_management_form_view" model="ir.ui.view">
+        <field name="name">credit.management.form.view</field>
+        <field name="model">credit.management</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="invoice_payment_status" widget="statusbar" statusbar_visible="not_paid,partial,paid"/>
+                    <button type="object" name="demo" string="Demo"/>
+                </header>
+                <sheet>
+                    <group string="Credit Management">
+                        <group>
+                            <field name="partner_id" options="{'no_create': True, 'no_create_edit':True}" readonly="1"/>
+                            <field name="invoice_id" options="{'no_create': True, 'no_create_edit':True}" readonly="1"/>
+                            <field name="invoice_date"/>
+                            <field name="invoice_date_due" widget="remaining_days" attrs="{'invisible': [['invoice_payment_status', 'in', ('paid', 'in_payment', 'reversed')]]}"/>
+                            <field name="invoice_amount_total" optional="show" sum="Total Invoice Amount" widget="monetary" decoration-bf="True"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="type_contact" required="1"/>
+                            <field name="comment" required="1"/>
+                            <field name="estimated_date_visit" attrs="{'invisible':[('type_contact','!=','salesperson_visit')], 'required':[('type_contact','=','salesperson_visit')]}"/>
+                            <field name="estimated_date_to_pay" attrs="{'invisible':[('type_contact','!=','payment_agreement')], 'required':[('type_contact','=','payment_agreement')]}"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- graph view -->
+    <record id="credit_management_graph_view" model="ir.ui.view">
+        <field name="name">credit.management.graph</field>
+        <field name="model">credit.management</field>
+        <field name="arch" type="xml">
+            <graph string="Paymemt Receipt" sample="1">
+                <field name="create_date" interval="day"/>
+                <field name="invoice_amount_total" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- pivot view -->
+    <record id="credit_management_pivot_view" model="ir.ui.view">
+        <field name="name">credit.management.pivot.view</field>
+        <field name="model">credit.management</field>
+        <field name="arch" type="xml">
+            <pivot string="Payment Report" sample="1">
+                <field name="create_uid" type="row"/>
+                <field name="create_date" type="col"/>
+                <!-- <field name="invoice_amount_residual" type="measure"/> -->
+            </pivot>
+        </field>
+    </record>
+
+    <!-- actvivity view -->
+    <record id="credit_management_activity_view" model="ir.ui.view">
+        <field name="name">credit.management.activity.view</field>
+        <field name="model">credit.management</field>
+        <field name="arch" type="xml">
+            <activity string="Credit Management">
+                <templates>
+                    <div t-name="activity-box">
+                        <div>
+                            <field name="name" display="full"/>
+                            <field name="partner_id" muted="1" display="full"/>
+                            <field name="invoice_id" muted="1" display="full"/>
+                        </div>
+                    </div>
+                </templates>
+            </activity>
+        </field>
+    </record>
+        <menuitem name="Credit Managment Tools" id="credit_managment_tools_menu" action="credit_management" groups="credit_sale_management.admin_payment_receipts" parent="credit_sale_management.credit_managment_menu" sequence="3"/>
+
+
+</odoo>

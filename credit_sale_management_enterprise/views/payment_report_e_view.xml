@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- action view -->
+    <record id="action_payment_report_all" model="ir.actions.act_window">
+        <field name="name">Payment Report Analysis</field>
+        <field name="res_model">payment.report.view</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="view_id"></field>  <!-- force empty -->
+        <!-- <field name="search_view_id" ref="view_order_product_search"/> -->
+        <field name="context">{'search_default_Sales':1, 'group_by_no_leaf':1,'group_by':[]}</field>
+    </record>
+
+    <!-- pivot view -->
+    <record id="view_payment_report_e_pivot" model="ir.ui.view">
+         <field name="name">sale.report.pivot</field>
+         <field name="model">payment.report.view</field>
+         <field name="arch" type="xml">
+             <pivot string="Payment Report Analysis" disable_linking="True" sample="1">
+                <field name="date" interval="month" type="col"/>
+                <field name="date" interval="week" type="col"/>
+                <field name="date" interval="day" type="col"/>
+                <field name="user_id" type="row"/>
+                <field name="team_id" type="row"/>
+                <field name="total_amount" type="measure"/>
+             </pivot>
+         </field>
+    </record>
+    <!-- graph view -->
+    <record id="view_payment_report__e_graph" model="ir.ui.view">
+        <field name="name">payment.report.graph</field>
+        <field name="model">payment.report.view</field>
+        <!-- <field name="context">{'group_by':['company_id']}</field> -->
+        <field name="arch" type="xml">
+            <graph string="Payment Report Analysis" type="bar" sample="1" disable_linking="1">
+                <field name="date" type="row" interval="day"/>
+                <field name="company_id" type="row"/>
+                <field name="total_amount" type="measure"/>
+            </graph>
+        </field>
+   </record>
+
+   <menuitem name="Reports" id="payment_reports_e" parent="credit_sale_management.credit_managment_menu" sequence="3" action="action_payment_report_all"/>
+
+</odoo>

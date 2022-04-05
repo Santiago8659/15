@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>   
+        <!-- Credit Action Sequences -->
+       
+    <record id="sequence_credit_management_actions" model="ir.sequence">
+        <field name="name">Credit Management Actions Sequence</field>
+        <field name="code">credit.management</field>
+        <field name="prefix">CA</field>
+        <field name="padding">5</field>
+        <field eval="False" name="company_id"/>
+    </record>
+</odoo>

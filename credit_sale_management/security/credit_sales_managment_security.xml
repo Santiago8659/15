@@ -1,0 +1,26 @@
+<odoo>
+    <record id="category_payment_receipts" model="ir.module.category">
+        <field name="name">Payment Receipts</field>
+        <field name="description">Allow generate an intermediate step for salesperson to register payments in accounting</field>
+        <field name="sequence">30</field>
+        <field name="parent_id" ref='base.module_category_sales'/>
+    </record>
+
+    <record id="user_payment_receipts" model="res.groups">
+        <field name="name">User: Show only his own documents</field>
+        <field name="category_id"
+               ref="credit_sale_management.category_payment_receipts"/>
+        <field name="implied_ids"
+               eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="admin_payment_receipts" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id"
+               ref="credit_sale_management.category_payment_receipts"/>
+               <!-- las vistas deben ir heredadas para poder quede como un menu desplegable, el ordne correcto es de mayor a menor permisos, ya que al heredar se optienen esos permisos tambien -->
+               <!-- este es lo que se pone para poder relacionarlo, la referencai es al modelo anterior -->
+        <field name="implied_ids"
+               eval="[(4, ref('user_payment_receipts'))]"/>       
+    </record>
+</odoo>

@@ -1,0 +1,2 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_admin_payment_report_view,access.payment.report.view,model_payment_report_view,credit_sale_management.admin_payment_receipts,1,1,1,1

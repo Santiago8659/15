@@ -1,0 +1,463 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* credit_management_actions
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-26 14:37+0000\n"
+"PO-Revision-Date: 2022-01-26 14:37+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: credit_management_actions
+#: code:addons/credit_management_actions/models/credit_management.py:0
+#: code:addons/credit_management_actions/models/credit_management.py:0
+#, python-format
+msgid "Action: Make a new follow-up call on %s, Comment: %s"
+msgstr "Acción: Realice una nueva llamada de seguimiento en %s, Comentario: %s"
+
+#. module: credit_management_actions
+#: code:addons/credit_management_actions/models/credit_management.py:0
+#, python-format
+msgid "Action: Make collection visit for the date %s, Comment: %s"
+msgstr "Acción: Hacer visita de recaudo para la fecha %s, Comentario: %s"
+
+#. module: credit_management_actions
+#: code:addons/credit_management_actions/models/credit_management.py:0
+#, python-format
+msgid "Action: Verify the effectiveness of the visit made %s, Comment: %s"
+msgstr "Acción: Verificar la efectividad de la visita realizada %s, Comentario: %s"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: credit_management_actions
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.account_move_view_form_credit_managemnt_actions
+msgid "Add a line"
+msgstr "Añadir un Registro"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__message_attachment_count
+msgid "Attachment Count"
+msgstr "Recuento de Archivos"
+
+#. module: credit_management_actions
+#: code:addons/credit_management_actions/models/credit_management.py:0
+#, python-format
+msgid "Collection Visit"
+msgstr "Visita de colección"
+
+#. module: credit_management_actions
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.credit_management_search_view
+msgid "Collector"
+msgstr "Recaudador"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__comment
+msgid "Comment"
+msgstr "Comentario"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__company_id
+msgid "Company"
+msgstr "Compañia"
+
+#. module: credit_management_actions
+#: model:ir.model,name:credit_management_actions.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: credit_management_actions
+#: code:addons/credit_management_actions/models/credit_management.py:0
+#: code:addons/credit_management_actions/models/credit_management.py:0
+#, python-format
+msgid "Contact Again"
+msgstr "Cantactar de nuevo"
+
+#. module: credit_management_actions
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.credit_management_search_view
+msgid "Create Date"
+msgstr "Fecha de Creacion"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: credit_management_actions
+#: model:ir.model,name:credit_management_actions.model_credit_management
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.credit_management_activity_view
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.credit_management_form_view
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.credit_management_tree_view
+msgid "Credit Management"
+msgstr "Gestion de Cartera"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_account_bank_statement_line__credit_management_actions_ids
+#: model:ir.model.fields,field_description:credit_management_actions.field_account_move__credit_management_actions_ids
+#: model:ir.model.fields,field_description:credit_management_actions.field_account_payment__credit_management_actions_ids
+#: model:ir.model.fields,field_description:credit_management_actions.field_res_partner__credit_management_actions_ids
+#: model:ir.model.fields,field_description:credit_management_actions.field_res_users__credit_management_actions_ids
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.account_move_view_form_credit_managemnt_actions
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.res_partner_form_view_inherit_credit_management
+msgid "Credit Management Actions"
+msgstr "Acciones de Gestion de Cartera"
+
+#. module: credit_management_actions
+#: model:ir.actions.act_window,name:credit_management_actions.credit_management
+msgid "Credit Managment"
+msgstr "Gestion de Cartera"
+
+#. module: credit_management_actions
+#: model:ir.ui.menu,name:credit_management_actions.credit_managment_tools_menu
+msgid "Credit Managment Tools"
+msgstr "Herramientas de Gestion de Cartera"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__currency_id
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__partner_id
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.credit_management_search_view
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: credit_management_actions
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.credit_management_form_view
+msgid "Demo"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_account_move__display_name
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__display_name
+#: model:ir.model.fields,field_description:credit_management_actions.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Nombre Público"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__estimated_date_visit
+msgid "Estimated Date of Visit"
+msgstr "Fecha estimada de visita"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__estimated_date_to_pay
+msgid "Estimated Date to Pay"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model,name:credit_management_actions.model_account_move
+msgid "Facturación electrónica"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields.selection,name:credit_management_actions.selection__credit_management__type_contact__family_message
+msgid "Family Message"
+msgstr "Mensaje familiar"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,help:credit_management_actions.field_credit_management__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: credit_management_actions
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.credit_management_search_view
+msgid "Group By"
+msgstr ""
+
+#. module: credit_management_actions
+#: model_terms:ir.actions.act_window,help:credit_management_actions.credit_management
+msgid "Here you can manage the record of credit management actions"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_account_move__id
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__id
+#: model:ir.model.fields,field_description:credit_management_actions.field_res_partner__id
+msgid "ID"
+msgstr "Id"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,help:credit_management_actions.field_credit_management__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,help:credit_management_actions.field_credit_management__message_needaction
+#: model:ir.model.fields,help:credit_management_actions.field_credit_management__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,help:credit_management_actions.field_credit_management__message_has_error
+#: model:ir.model.fields,help:credit_management_actions.field_credit_management__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__invoice_id
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__invoice_amount_total
+msgid "Invoice Amount Total"
+msgstr "Monto Total Facturado"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__invoice_date
+msgid "Invoice Date"
+msgstr "Fecha de Factura"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__invoice_date_due
+msgid "Invoice Date Due"
+msgstr "Fecha de vencimiento"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_account_move____last_update
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management____last_update
+#: model:ir.model.fields,field_description:credit_management_actions.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Última Modificación el"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,help:credit_management_actions.field_credit_management__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,help:credit_management_actions.field_credit_management__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,help:credit_management_actions.field_credit_management__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields.selection,name:credit_management_actions.selection__credit_management__type_contact__paying
+msgid "Paying"
+msgstr "Abonando"
+
+#. module: credit_management_actions
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.credit_management_graph_view
+msgid "Paymemt Receipt"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields.selection,name:credit_management_actions.selection__credit_management__type_contact__payment_agreement
+msgid "Payment Agreement"
+msgstr "Acuerdo de Pago"
+
+#. module: credit_management_actions
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.credit_management_pivot_view
+msgid "Payment Report"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__invoice_payment_status
+msgid "Payment State"
+msgstr "Estado del Pago"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_res_partner__count_cma
+#: model:ir.model.fields,field_description:credit_management_actions.field_res_users__count_cma
+msgid "Qty of Actions"
+msgstr "Ctd de Acciones"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields.selection,name:credit_management_actions.selection__credit_management__type_contact__salesperson_visit
+msgid "Salesperson Visit"
+msgstr "Visita del Vendedor"
+
+#. module: credit_management_actions
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.credit_management_search_view
+msgid "Search Credit Management"
+msgstr "Gestión de crédito de búsqueda"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,help:credit_management_actions.field_credit_management__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: credit_management_actions
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.credit_management_form_view
+#: model_terms:ir.ui.view,arch_db:credit_management_actions.credit_management_tree_view
+msgid "Total Invoice Amount"
+msgstr "Valor Facturado"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__type_contact
+msgid "Type of Contact"
+msgstr "Tipo de contacto"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,help:credit_management_actions.field_credit_management__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields.selection,name:credit_management_actions.selection__credit_management__type_contact__unlocated
+msgid "Unlocated"
+msgstr "No localizado"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: credit_management_actions
+#: code:addons/credit_management_actions/models/credit_management.py:0
+#, python-format
+msgid "Verify the effectiveness of the visit"
+msgstr "Verificar la efectividad de la visita"
+
+#. module: credit_management_actions
+#: model:ir.model.fields,field_description:credit_management_actions.field_credit_management__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: credit_management_actions
+#: model:ir.model.fields,help:credit_management_actions.field_credit_management__website_message_ids
+msgid "Website communication history"
+msgstr ""

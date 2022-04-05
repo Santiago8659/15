@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- pivot view -->
+    <record id="view_payment_report_dashboard_pivot" model="ir.ui.view">
+        <field name="name">view.payment.report.pivot</field>
+        <field name="model">payment.report.view</field>
+        <field name="arch" type="xml">
+            <pivot string="Payment Report Analysis" disable_linking="True" sample="1">
+                <field name="date" interval="month" type="col"/>
+                <field name="date" interval="week" type="col"/>
+                <field name="date" interval="day" type="col"/>
+                <field name="team_id" type="row"/>
+                <field name="user_id" type="row"/>
+                <field name="total_amount" type="measure"/>
+            </pivot>
+        </field>
+   </record>
+
+   <!-- search view -->
+    <record id="payment_report_search_view" model="ir.ui.view">
+        <field name="name">payment.report.search.view</field>
+        <field name="model">payment.report.view</field>
+        <field name="arch" type="xml">
+            <search string="Search Payment Report View">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="invoice_id"/>
+                <field name="user_id"/>
+                <filter string="Current Month" name="filter_current_month" domain="[('date','>=', ((datetime.datetime(month=context_today().month, year=context_today().year, day=1) + relativedelta(hours=5)).strftime('%Y-%m-%d %H:%M:%S')))]"/>
+                <separator/>
+                <filter string="Draft" domain="[('state', '=', 'draft')]" name="state_draft_filter"/>
+                <filter string="Submit" domain="[('state', '=', 'submit')]" name="state_submit_filter"/>
+                <filter string="Done" domain="[('state', '=', 'done')]" name="state_done_filter"/>
+                <separator/>
+                <filter string="Create Date" name="filter_date" date="date"/>
+                <filter string="Payment Date" name="filter_date" date="payment_date"/>
+                <group expand="0" string="Group By">
+                    <filter string="Salesperson" name="salesperson" domain="[]" context="{'group_by': 'user_id'}"/>
+                    <filter string="Customer" name="customer" domain="[]" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Create Date" name="order_month" domain="[]" context="{'group_by': 'date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    
+<!--    
+   <record id="sale.action_order_report_so_salesteam" model="ir.actions.act_window">
+        <field name="view_mode">dashboard</field>
+        <field name ="view_id" ref="sale_report_view_dashboard"/>
+    </record> -->
+
+   <!-- dashboard view -->
+    <record id="payment_report_view_dashboard" model="ir.ui.view">
+        <field name="name">payment.report.view.dashboard</field>
+        <field name="model">payment.report.view</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <dashboard sample="1">
+                <view type="graph" ref="credit_sale_management_enterprise.view_payment_report__e_graph"/>
+                <group>
+                    <group>
+                        <aggregate name="total_amount" string="Total Payment" field="total_amount" widget="monetary"/>
+                        <aggregate name="financial_discount" string="Financial Discount" field="financial_discount" widget="monetary"/>
+                        <formula name="discount" string="Discounts" value="record.financial_discount / record.total_amount" widget="percentage"/>
+                        <aggregate name="salesperson_cost" string="Total Saleperson Cost" field="salesperson_cost" widget="monetary"/>
+                        <formula name="costs" string="Costs" value="record.salesperson_cost / record.total_amount" widget="percentage"/>
+                        <aggregate name="customers" string="# Customers" field="partner_id" clickable="False"/>
+                        <aggregate name="Payments" string="# Payment" field="nbr"/>
+                        <aggregate name="Canceled" string="# Canceled" field="canceled"/>
+
+                        <!--<aggregate name="price_subtotal_all_orders" string="Untaxed Total" field="price_subtotal" widget="monetary"/>
+                        <aggregate name="order_id_confirmed_orders" field="order_id" string="Orders"/>
+
+                        <formula name="total" string="Average Order" value="record.price_subtotal_confirmed_orders / record.order_id_confirmed_orders" widget="monetary"/>
+
+                        <aggregate name="avg_days_to_confirm" string="Average Days to Confirm" field="avg_days_to_confirm" group_operator="avg" value_label="days" clickable="False"/>
+                         -->
+                    </group>
+                    <group col="1">
+                        <widget name="pie_chart" title="Teams" attrs="{'groupby': 'team_id'}"/>
+                    </group>
+                </group>
+                <view type="pivot" ref="credit_sale_management_enterprise.view_payment_report_dashboard_pivot"/>
+            </dashboard>
+        </field>
+    </record>
+
+        <!-- action view -->
+    <record id="payment_report_action_dashboard" model="ir.actions.act_window">
+        <field name="name">Payment Report Analysis</field>
+        <field name="res_model">payment.report.view</field>
+        <field name="view_mode">dashboard,pivot,graph</field>
+        <field name="context">{'search_default_filter_current_month':1}
+        </field>
+    </record>
+
+    <record id="payment_report_action_dashboard_dashboard" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">dashboard</field>
+        <field name="view_id" ref="payment_report_view_dashboard"/>
+        <field name="act_window_id" ref="payment_report_action_dashboard"/>
+    </record>
+
+    <record id="payment_report_action_dashboard_pivot" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">pivot</field>
+        <field name="view_id" ref="credit_sale_management_enterprise.view_payment_report_dashboard_pivot"/>
+        <field name="act_window_id" ref="payment_report_action_dashboard"/>
+    </record>
+
+    <record id="sale_report_action_dashboard_graph" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="credit_sale_management_enterprise.view_payment_report__e_graph"/>
+        <field name="act_window_id" ref="payment_report_action_dashboard"/>
+    </record>
+
+    <!-- modifica la accion del menu -->
+    <record id="credit_sale_management_enterprise.payment_reports_e" model="ir.ui.menu">
+        <field name="action" ref="payment_report_action_dashboard"/>
+    </record>
+
+
+</odoo>
+
+
+
+    

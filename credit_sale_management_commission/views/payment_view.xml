@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_payment_report_form" model="ir.ui.view">
+        <field name="name">view.payment.report.form</field>
+        <field name="model">payment.report</field>
+        <field name="inherit_id" ref="credit_sale_management.payment_report_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='salesperson_cost']" position="after">
+                <field name="not_commission" groups="sales_team.group_sale_manager,account.group_account_manager"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_payroll_payment_form" model="ir.ui.view">
+        <field name="name">view.payroll.payment.form</field>
+        <field name="model">payroll.payment</field>
+        <field name="inherit_id" ref="credit_sale_management.payroll_payment_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state_reconcile']" position="after">
+                <field name="not_commission" groups="sales_team.group_sale_manager,account.group_account_manager"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

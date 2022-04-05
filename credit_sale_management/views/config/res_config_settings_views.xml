@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form_account_inherit" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.credit.manager</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="10"/>
+            <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='bank_cash']" position="after">
+                    <h2>Select Account To Payment</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Discounts Account</span>
+                                <div class="text-muted">Select the default account for discounts</div>
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <label for="payment_discount_account_id" class="col-lg-3 o_light_label"/>
+                                        <field name="payment_discount_account_id"/>
+                                        <!-- <field name="note" /> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Grace Days</span>
+                                <div class="text-muted">Define the grace days to the invoice payment</div>
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <label for="grace_days" class="col-lg-3 o_light_label"/>
+                                        <field name="grace_days"/>
+                                        <!-- <field name="note" /> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Grace Days To Report</span>
+                                <div class="text-muted">Define the grace days to the report the payment</div>
+                                <div class="content-group">
+                                    <div class="row mt16">
+                                        <label for="grace_days_to_report" class="col-lg-3 o_light_label"/>
+                                        <field name="grace_days_to_report"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="check_discount"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label string="Check Discount" for="check_discount"/>
+                                <div class="text-muted">Define if check discount amount in payment report</div>
+                            </div>
+                        </div> -->
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_admin_credit_management,access.credit.management,model_credit_management,credit_sale_management.admin_payment_receipts,1,1,1,1
+access_credit_management_all_user,access.credit.management,model_credit_management,,1,0,0,0
+access_credit_management_sale_user,access.credit.management,model_credit_management,sales_team.group_sale_salesman,1,0,0,0
+access_credit_management_accountant,access.credit.management,model_credit_management,account.group_account_user,1,0,0,0

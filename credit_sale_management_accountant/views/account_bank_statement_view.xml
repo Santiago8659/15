@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="credit_managment_inherit_account_bank_statement" model="ir.ui.view">
+        <field name="name">account.bank.statement.view.form.inherit.credit.managment</field>
+        <field name="model">account.bank.statement</field>
+        <field name="inherit_id" ref="account.view_bank_statement_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='button_reopen']" position="before">
+                <button string="Reconcile Payroll" name="button_bank_reconcile_payroll" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'posted')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='narration']" position="after">
+                <field name="suitable_journal_ids" invisible="1"/>
+                <field name="journal_id" invisible="1" />
+                <field name="payroll_id" domain="[('state','=','done'),('journal_id','=',journal_id),('state_reconcile', '=', 'to_reconcile')]" optional="show"/>
+                <field name="payroll_total_amount" attrs="{'invisible': [('payroll_id','=',False)]}" widget="monetary" optional="show"/>
+            </xpath >
+            <xpath expr="//field[@name='foreign_currency_id']" position="after">
+                <button name="button_make_reconciliation" type="object" attrs="{'invisible': ['|',('is_reconciled', '=', True),('payroll_id','=',False)], 'column_invisible': [('parent.state', '!=', 'posted')]}" string="Make Conciliation" icon="fa-plus"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="credit_managment_inherit_account_bank_statemen_line" model="ir.ui.view">
+        <field name="name">account.bank.statement.line.view.form.inherit.credit.managment</field>
+        <field name="model">account.bank.statement.line</field>
+        <field name="inherit_id" ref="account.view_bank_statement_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='move_id']" position="after">
+                <field name="payroll_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

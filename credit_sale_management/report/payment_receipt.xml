@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="payment_receipt_int" name="payment_receipt_int">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <!-- <t t-call="sale.report_saleorder_document" t-lang="o.partner_id.lang"/> -->
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h4><strong>Payment Receipt: <span t-field="o.name"/></strong></h4>
+                        <div class="row">
+                            <div class="col-12" t-if="o.payment_date">
+                                <strong>Payment Date: </strong> <span t-field="o.payment_date"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" t-if="o.create_uid">
+                                <strong>Saleperson: </strong> <span t-field="o.create_uid"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12" t-if="o.invoice_partner_id">
+                                <strong>Customer: </strong> <span t-field="o.invoice_partner_id"/>
+                            </div>
+                        </div>
+                        <!-- <address t-field="o.invoice_partner_id"
+                            t-options='{"widget": "contact", "fields": ["address", "name", "phone", "email"], "no_marker": True}'/>
+                         -->
+                        <p/>
+                        <div class="dropdown-divider"></div>
+                        <h5><strong>Invoice Information</strong></h5> 
+                        <div class="row">
+                            <div class="col-12" t-if="o.invoice_id">
+                                <strong>Invoice: </strong> <span t-field="o.invoice_id"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6" t-if="o.invoice_date">
+                                <strong>Invoice Date: </strong> 
+                                <p t-field="o.invoice_date"/>
+                            </div>
+                            <div class="col-6" t-if="o.invoice_date_due">
+                                <strong>Date Due: </strong>
+                                <p t-field="o.invoice_date_due"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6" t-if="o.invoice_amount_total">
+                                <strong>Invoice Ammount: </strong> 
+                                <p t-field="o.invoice_amount_total"/>
+                            </div>
+                            <div class="col-6" t-if="o.amount_residual">
+                                <t t-if="o.state == 'done'">
+                                    <strong>Invoice Ammount Residual: </strong> 
+                                    <p t-field="o.amount_residual"/>
+                                </t>
+                            </div>
+                            <div class="col-6" t-if="o.invoice_amount_residual">
+                                <t t-if="o.amount_residual == 0.0">
+                                    <strong>Invoice Ammount Residual: </strong>
+                                    <p t-field="o.invoice_amount_residual"/>
+                                </t>
+                            </div>
+                        </div>
+                        <p/>
+                        <div class="dropdown-divider"></div>
+                        <h5><strong>Payment Information</strong></h5> 
+                        <div class="row">
+                            <div class="col-6" t-if="o.amount">
+                                <strong>Payment Amount: </strong>
+                            </div>
+                            <div class="col-6 text-right" t-if="o.amount">
+                                <span t-field="o.amount"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <strong>Payment Difference: </strong>
+                            </div>
+                            <div class="col-6 text-right" t-if="o.payment_difference">
+                                <span t-field="o.payment_difference"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
